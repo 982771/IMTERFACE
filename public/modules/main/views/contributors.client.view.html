@@ -1,0 +1,164 @@
+<section data-ng-controller="ContributorController" style="position:relative;">
+	<div class="page-heading">
+	Contributors
+	</div>
+
+	<div class="">
+
+		<div class="contri-container contri_1">
+			<div class="contri-heading">
+			Product Manager
+			</div>
+			<div class="row contri-content">
+				<div class="col-xs-8 col-xs-offset-2 col-sm-6 col-md-6 col-lg-4 col-lg-offset-2 contributor-outer" ng-repeat="obj in contributors_managers">
+					<img class="contri-image" src='{{obj.imagePath}}'>
+					</img>
+					<div class="contri-name">
+						{{obj.username}}
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<br/>
+
+		<div class="contri-container contri_2">
+			<div class="contri-heading">
+				Developer + UX
+			</div>
+			<div class="row contri-content">
+				<div class="col-xs-8 col-xs-offset-2 col-sm-6 col-md-6 col-lg-4 col-lg-offset-2 contributor-outer" ng-repeat="obj in contributors_developerux" >
+					<img class="contri-image" src='{{obj.imagePath}}'>
+					</img>
+					<div class="contri-name">
+						{{obj.username}}
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<br/>
+
+		<div class="contri-container contri_3">
+			<div class="contri-heading">
+				Developer + DBA
+			</div>
+			<div class="row contri-content">
+			<div class="col-xs-8 col-xs-offset-2 col-sm-6 col-md-6 col-md-offset-3  col-lg-4 col-lg-offset-2 contributor-outer" ng-repeat = "obj in contributors_developerdba">
+					<img class="contri-image" src='{{obj.imagePath}}'>
+					</img>
+					<div class="contri-name">
+						{{obj.username}}
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<br/>
+
+		<div class="contri-container contri_4">
+			<div class="contri-heading">
+				UI Developer
+			</div>
+			<div class="row contri-content">
+				<div class="col-xs-8 col-xs-offset-2 col-sm-6 col-md-6 col-lg-4 contributor-outer" ng-repeat="obj in contributors_developerui">
+					<img class="contri-image" src='{{obj.imagePath}}'>
+					</img>
+					<div class="contri-name">
+						{{obj.username}}
+					</div>
+				</div>
+			</div>
+			</div>
+
+		<br/>
+
+		<div class="contri-container contri_5">
+			<div class="contri-heading">
+				Solution Architect
+			</div>
+			<div class="row contri-content">
+				<div class="col-xs-8 col-xs-offset-2 col-sm-6 col-md-6 col-md-offset-3  col-lg-4 col-lg-offset-2 contributor-outer" ng-repeat="obj in contributors_solutionarchtitect">
+					<img class="contri-image" src='{{obj.imagePath}}'>
+					</img>
+					<div class="contri-name">
+						{{obj.username}}
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<br/>
+
+		<div class="contri-container contri_6">
+			<div class="contri-heading" style="width:250px">
+				Special Contribution
+			</div>
+			<div class="row contri-content">
+				<div class="col-xs-8 col-xs-offset-2 col-sm-6 col-md-6 col-md-offset-3  col-lg-4 col-lg-offset-2 contributor-outer" ng-repeat = "obj in contributors_specialconti">
+					<img class="contri-image" src='{{obj.imagePath}}'>
+					</img>
+					<div class="contri-name">
+						{{obj.username}}
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="contri-container contri_6">
+			<div class="contri-heading" style="width:250px">
+				Others
+			</div>
+			<div class="row contri-content">
+				<div class="col-xs-8 col-xs-offset-2 col-sm-6 col-md-6 col-md-offset-3  col-lg-4 col-lg-offset-2 contributor-outer" ng-repeat = "obj in others">
+					<img class="contri-image" src='{{obj.imagePath}}'>
+					</img>
+					<div class="contri-name">
+						{{obj.username}}
+					</div>
+				</div>
+			</div>
+		</div>
+
+
+		<br/>
+		<br/>
+
+	</div>
+<script type="text/javascript">
+	$(document).ready(function(){
+
+	$(".contri_1").hide();
+		$(".contri_2").hide();
+			$(".contri_3").hide();
+				$(".contri_4").hide();
+					$(".contri_5").hide();
+						$(".contri_6").hide();
+
+					setTimeout(function(){
+						$('.contri_1').show().addClass('animated fadeInUp');
+					},300);
+
+					setTimeout(function(){
+						$('.contri_2').show().addClass('animated fadeInUp');
+					},600);
+
+					setTimeout(function(){
+						$('.contri_3').show().addClass('animated fadeInUp');
+					},900);
+
+					setTimeout(function(){
+						$('.contri_4').show().addClass('animated fadeInUp');
+					},1200);
+
+					setTimeout(function(){
+						$('.contri_5').show().addClass('animated fadeInUp');
+					},1500);
+
+					setTimeout(function(){
+						$('.contri_6').show().addClass('animated fadeInUp');
+					},1800);
+
+				});
+</script>
+</section>

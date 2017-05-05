@@ -1,0 +1,44 @@
+/*$hex-width: 150px;
+$hex-height: 86px;
+$hex-background-size: 173px;
+$hex-margin: 25px 5px;
+$hex-gap-margin-left: 86px;
+*/
+$size: 6; 
+$hex-size: $size * 1em; 
+$hex-corner-background-size: 175px + calc-px($size); //equals to the size of images used
+$hex-border-radius: $size * 0.055em;
+
+$hex-width: $hex-size * 1.7;
+$hex-height: $hex-size;
+$hex-margin: ($hex-size/3.5) ($hex-size/20);
+$hex-gap-margin-left: ($hex-size/1.04);
+
+$hex-matrix-container-width: $hex-width * 2.2;
+
+$hex-font-size: $size * 1.75px;
+
+
+/*website color theme*/
+/*doesn't work for highcharts*/
+$base-color-one:#002960;	/*McKinsey BLue*/
+$base-color-two:#2c3e50; 	/*Madison Grey*/
+$base-color-three:#0065BD;	/*Global Blue*/
+$base-color-four:#00ADEF;	/*Cyan*/
+$base-color-five:#006983;	/*Teal*/
+$base-color-six:#009AA6;	/*Turquoise*/
+$base-color-seven:#7D9AAA;	/*Blue Gray*/
+$base-color-eight:#67317E;	/*Purple*/
+$base-color-nine:#EA7A30;	/*Crusta Orange*/
+$base-color-ten:#D24D57; 	/*Chestnut Rose Red*/
+
+/*hexes color theme*/
+
+$hex-color-one:$base-color-six;
+$hex-color-two:$base-color-one;
+$hex-color-three:$base-color-three;
+$hex-color-four:$base-color-four;
+$hex-color-five:$base-color-five;
+$hex-color-six:$base-color-one;
+$hex-color-seven:$base-color-seven;//;
+$hex-color-eight:$base-color-five;

@@ -1,0 +1,80 @@
+<div class="modaldialog" id="odcmap-form">
+  <!-- Modal content-->
+  <div class="modal-content">
+      <div class="modal-header">
+          <h4 class="modal-title ">ODC Member Details</h4>
+      </div>
+      <div class="modal-body bg-info">
+          <form name="quoteForm" ng-model="quoteForm" ng-submit="submitForm(quoteForm.$valid)" >
+            <div class="row">
+                <div class="col-lg-6 col-md-6 col-sm-6">            
+                  <div class="form-group">
+                      <label>Name:</label>
+                      <input type="text" class="form-control " data-ng-model="info.Name" required>
+                      
+                  </div>
+                  <div class="form-group">
+                      <label>Desk No:</label>
+                      <input type="text" class="form-control " data-ng-model="info.Desk" required>
+                  </div>
+                  <div class="form-group">
+                      <label>Extn:</label>
+                      <input type="text" class="form-control " data-ng-model="info.Extn">
+                  </div>
+                  <div class="form-group">
+                      <label>Skill/Technology:</label>
+                      <input type="text" class="form-control " data-ng-model="info['Skill/Technology']">
+                  </div>
+                  <div class="form-group">
+                      <label>Tech Group:</label>
+                      <input type="text" class="form-control " data-ng-model="info['Tech Group']">
+                  </div>
+                </div>
+                <div class="col-lg-6 col-md-6 col-sm-6">
+                  <div class="form-group">
+                      <label>CNO:</label>
+                      <input type="text" class="form-control " data-ng-model="info.FMNO">
+                  </div>
+                  <div class="form-group">
+                      <label>Role:</label>
+                      <input type="text" class="form-control " data-ng-model="info.Role">
+                  </div>
+                  <div class="form-group">
+                      <label>Project Pool:</label>
+                      <select class="form-control" data-ng-model="info['Project Pool']">
+                        <option>SDG</option>
+                        <option>MDL</option>
+                        <option>MDX</option>
+                      </select>
+                  </div>
+                  <div class="form-group">
+                      <label>Primary Project:</label>
+                      <input type="text" class="form-control " data-ng-model="info['Primary Project']">
+                  </div>
+                  <div class="form-group">
+                      <label>Secondary Project:</label>
+                      <input type="text" class="form-control " data-ng-model="info['Secondary Project']">
+                  </div>
+                </div>
+              </div>
+              <!-- <div class="row">
+                <div class="form-group">
+                  <label> Email </label>
+                  <input type="email" class="form-control" data-ng-model="info['Email']">
+                </div>
+              </div> -->
+              <div class="row margin-above">
+                <div class="col-sm-offset-9 col-sm-3 col-lg-offset-9 col-lg-3 col-md-offset-9 col-md-3">
+                <!-- <button class="col-md-offset-9 col-md-1 btn btn-default btn-lg delete glyphicon glyphicon-trash" ng-click="showConfirm = true"></button> -->
+                  <button type="submit" class="btn submit-btn" ng-disabled="quoteForm.$invalid" ng-click="closeThisDialog()">Submit</button>
+                </div>
+              </div>
+          </form>
+      </div>
+  </div>
+</div>
+
+<div class="confirm-box" ng-show="showConfirm">
+  Are you sure you want to delete the employee ?
+  <button ng-click = "delete()"> Yes </button> <button ng-click = "showConfirm = false"> No</button>
+</div>

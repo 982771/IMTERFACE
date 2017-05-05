@@ -1,0 +1,71 @@
+<div data-ng-controller="HistoryController" id="historypage">
+	<!-- <div class="guage">
+	    <div class="window"></div>
+		<ul class="timeline">
+			<li ng-repeat="year in years">{{year}}</li>
+		</ul>
+	</div> -->
+			<div class="page-heading">
+	ODC History
+</div>
+	<div class="row">
+		<div class="col-md-12 col-xs-12 timeline-wrapper animated zoomInDown">		    
+				<ul class="timeline">
+					<li ng-repeat="history in histories" class="year" ng-click="timeclick(history)"><span class="glyphicon glyphicon-2x glyphicon-triangle-bottom"></span><p>{{history.contentyear}}</p></li>
+				</ul>			
+		</div>
+	</div>
+	<div class="row"><hr></div>
+	<div class="row history_detail">
+		<div class="col-md-12 col-sm-12 col-xs-12 history_container">
+			<div class="row mini_container">
+				<div ng-click="left()" class="col-md-1 col-sm-1 col-xs-1 left"><div class="L"></div></div>
+				<div class="col-md-10 col-sm-10 col-xs-10 full_content1">
+				<div class="col-md-12 col-sm-12 col-xs-12 detail_contentM" ng-bind-html="content1"></div>  
+						
+				</div>
+				<div class="col-md-10 col-sm-10 col-xs-10 full_content2">
+				<div class="col-md-12 col-sm-12 col-xs-12 detail_contentM" ng-bind-html="content2"></div> 
+				
+				</div> 
+				<div ng-click="right()" class="col-md-1 col-sm-1 col-xs-1 right"><div class="R"></div></div>
+			</div>
+		</div>
+	</div>
+</div>
+<script type="text/javascript">
+
+
+	$(window).resize(function(){
+
+		/*$(".timeline").css({left:(parseFloat($('.timeline').css('left')) -0.5*parseFloat($('.timeline-wrapper').css('width')))});
+*/
+	});
+
+	$(document).ready(function()
+     {
+      $(".full_content1").removeClass("animated slideOutLeft slideOutRight slideInLeft slideInRight").addClass("animated slideInRight");
+      $(".full_content2").css({"opacity":0}).removeClass("animated slideOutLeft slideOutRight slideInLeft slideInRight").addClass("animated slideOutLeft").fadeTo(3000,1);
+
+     });
+     $('body').bind('keyup', function(e) {
+	if(e.keyCode==39){
+
+		if($(".timeline").is(":visible"))
+		{
+		   $(".right").click();
+		   
+	    }
+	}
+	if(e.keyCode==37){
+
+		if($(".timeline").is(":visible"))
+		{
+		   $(".left").click();
+		   
+	    }
+	}
+});
+
+
+</script>

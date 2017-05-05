@@ -1,0 +1,67 @@
+<div class="modaldialog" id="successQuotes">
+  <!-- Modal content-->
+  <div class="modal-content" style="border:none;">
+      <div class="modal-header bg-primary" style="padding:10px 10px 10px 20px;">
+          <h3 class="modal-title "><em style="font-style:normal;">POCs</em></h3>
+      </div>
+      <div class="modal-body bg-info" style="padding:20px;">
+          <form name="updatequoteForm" ng-model="updatequoteForm" ng-submit="updateQuoteForm()" >
+              <div class="form-group row">
+                  <h4 class="col-sm-2">By:</h4>
+                  <div class="col-sm-8">
+                      <input type="text" name="by"class="form-control" value="{{poc1.by}}" id="by" placeholder="By" required>
+                  </div>
+              </div>
+              <div class="form-group row">
+                  <h4 class="col-sm-2 required">Title:</h4>
+                  <div class="col-sm-8">
+                      <input type="text" class="form-control" value="{{poc1.title}}" id="title" name="title" placeholder="Title" required>
+                  </div>
+              </div>
+               <div class="form-group row">
+                  <h4 class="col-sm-2">Date:</h4>
+                  <div class="col-sm-8">
+                      <input type="text" class="form-control" id="successdate" value="{{successdate}}" name="formdate" placeholder="mm/dd/yyyy" 
+                      required>
+                  </div> 
+              </div>
+              <div class="form-group row">
+                  <h4 class="col-sm-2 required">Abstract:</h4>
+                  <div class="col-sm-8">
+                      <textarea class="form-control" rows="2" id="abstract" name="abstract" placeholder="Abstract" required>{{poc1.desc}}</textarea>                      
+                  </div>
+              </div>
+              <div class="form-group row">
+                  <h4 class="col-sm-2">Content:</h4>
+                  <div class="col-sm-8">
+                      <text-angular id="content" ng-model="poc1.content"></text-angular>
+                  </div>
+              <div><br>             
+              <div class="row margin-above">
+                <div class="col-sm-offset-9 col-sm-3 col-lg-offset-9 col-lg-3 col-md-offset-9 col-md-3">
+                  <button type="submit" class="updateBtn" >Update</button>
+                </div>
+              </div>
+            </form>
+      </div>
+  </div>
+</div>
+<script type="text/javascript">
+  /*$(function() { 
+        $('#successdate').daterangepicker({
+            autoUpdateInput: false,
+            showDropdowns: true,
+             singleDatePicker: true,
+                 locale: {
+                  format: 'YYYY-MM-DD'
+                },           
+        });
+
+        // $('#date').on('apply.daterangepicker', function(ev, picker) {
+        //      $(this).val(picker.startDate.format('YYYY-MM-DD'));
+        // }); 
+
+  });
+  */
+  </script>
+

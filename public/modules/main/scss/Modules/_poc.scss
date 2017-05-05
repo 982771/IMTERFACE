@@ -1,0 +1,159 @@
+.pocMain{
+    margin-top: 2em; 
+
+    .visibleStory1{
+        height: 10em;
+		    background: linear-gradient(to left, white 50%, rgba(91,101,158,0.4) 50%);
+        background-size: 200% 100%;
+        background-position:right bottom;
+        margin-left:10px;
+        transition:all 0.5s ease;
+    		border-left : 2px solid #0065BD;
+    		padding: 0px 5px;  
+        cursor: pointer;
+
+        h4 {
+            font:{
+                size: $sub-header-font;
+                weight:bold;
+                family: 'Raleway', sans-serif; 
+                }       
+                margin:0;  
+                color: #002960 !important;
+
+        }
+
+        hr {
+            border-bottom: 1px solid #ccc;
+            width:100%;
+            margin: ($hex-font-size) auto;
+            color:#002960 !important;
+        }
+
+        p {
+            font:{
+              size: $hex-font-size * 1.3;
+              family: 'Raleway', sans-serif; 
+            }
+            text-shadow: none;
+        }
+
+       
+$line-height: 1.4;
+$lines-to-show: 3;
+
+.dotThree{
+    position: absolute;
+    bottom: 0px;
+    right: 20px;
+    padding-top:30px;
+    font:{
+              size: $hex-font-size * 1.2;
+            }
+    color: #002960;        
+}
+
+    p.truncate1{
+        
+            height: 3em;
+            line-height: 1.5em;
+            width: auto;
+            overflow: hidden;
+            position: relative;
+            
+            }
+
+    }
+	
+	.visibleStory1:hover {
+    //background-position:left top;  
+	}
+	
+}
+
+.sheading1 {
+            font:{
+              size: $hex-font-size * 1.5;
+              weight:bold;
+              family: 'Raleway', sans-serif; 
+            }
+            text-shadow: none;
+            color: #002960; 
+        }
+	
+	.glyphicon-2x{
+	  font-size:2em;
+	}
+	
+	.float-right{
+	float:right;
+	}
+
+    .storyContent{
+        font:{
+              size: $hex-font-size * 1.2;
+              family: 'Raleway', sans-serif; 
+            }
+            text-shadow: none;
+            position:absolute;padding-right:10%;
+            line-height: 2em;
+
+            span{
+              color: #0065BD;
+            }
+    }
+
+.story-link { float:none;}   
+
+
+
+
+.required:after {
+    color: red;
+    content: '*';
+    font-weight:bold;
+}
+.reqtext{
+    font-size:1.2em;
+}
+
+h4{
+    margin-top:0px;
+}
+
+.date{
+    margin-left: 0px;
+}
+
+.editpocBtn{
+  background-color:#002960;
+  color: white;
+  border: 1px solid #002960; 
+  margin-left: 2%;
+  font-size: 1.5em;
+}
+
+
+.sbtn{
+  background-color:#002960;
+  color: white;
+  border: 1px solid #002960; 
+  margin-left: 2%;
+  font-size: 1.2em;
+  margin-top: 5%;
+}
+
+
+.updateBtn{
+   background-color:#002960;
+  color: white;
+  border: 1px solid #002960; 
+  margin-left: 2%;
+  font-size: 1.2em;
+  margin-top: 5%; 
+}
+
+.story_div{
+  height: 400px;
+
+}

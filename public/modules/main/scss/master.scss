@@ -1,0 +1,132 @@
+/*
+@import    'base/variables';
+@import    'base/mixins';
+@import    'base/extends';
+ 
+
+@import    	'components/buttons';
+@import		'components/forms';
+@import   	'components/social-icons';
+ 
+
+@import    	'modules/hex-nav';
+@import     'modules/single-hex';
+@import		'modules/tabs';
+@import		'modules/tables';
+*/
+@import    	'base/variables';
+@import     'base/mixins';
+@import     'base/functions';
+@import     'base/font-styles';
+@import     'base/bootstrap-override';
+@import     'components/buttons';
+
+@import     'modules/hex-nav';
+@import     'modules/single-hex';
+@import     'modules/title-bar';
+@import     'modules/big-header';
+@import     'modules/small-header';
+//@import     'modules/dashboard';
+@import     'modules/dashboard-nav';
+@import     'modules/index-page-alignments';
+@import     'modules/success-stories';
+@import     'modules/induction-material';
+@import     'modules/odc-history';
+@import     'modules/customerQuotes';
+@import     'modules/gallery';
+@import     'modules/odcmap';
+@import     'modules/contributors';
+@import     'modules/ngDialog';
+@import     'modules/ngDialog-theme-default';
+@import     'modules/poc';
+@import     'modules/mandatoryTrainings';
+
+html{
+	height:	100%;  	
+}
+
+body {
+    //font-family: 'Open Sans', sans-serif;
+    font-family: 'Raleway', sans-serif;
+    font-size: 11px;
+    color:#333;
+    background-color: #fff;
+    margin:0;
+    padding:0;
+    height: 100%;  
+   // @include breakpoint(tv){
+   //      background-color: blue;    
+   //  }
+   //  @include breakpoint(desktop){
+   //      background-color: green;    
+   //  }
+   //  @include breakpoint(tablet){
+   //      background-color: red;    
+   //  }
+   //  @include breakpoint(phablet){
+   //      background-color: yellow;    
+   //  }
+   //  @include breakpoint(mobile){
+   //      background-color: pink;    
+   //      }
+    }
+p{
+    //font-size: 1.1em;
+    font-size: $p-font;
+    color: #555;
+    text-align: justify;
+    //text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.2);
+}
+.modal-form {
+  
+  position: fixed;
+  background:rgba(2,25,255,1);
+  // opacity:0.5;
+  z-index:1001;
+  width:50%;
+  height:50%;
+  top: 5%;
+  left:5%;
+}
+.modal-container {
+  position: fixed;
+  background-color:rgba(0,0,0,0.5);
+  opacity:0.5;
+  z-index:1000;
+  width:100%;
+  height:100%;
+  top:0;
+  left:0;
+}
+
+.daterangepicker.dropdown-menu {
+  z-index: 10000 !important;
+}
+
+.animate-show {
+  transition: all linear 0.5s;
+}
+.animate-show.ng-hide {
+  opacity:0;
+}
+
+.tooltip-base {
+  cursor:pointer;
+}
+.tool-tip {
+  position:fixed;
+  background-color: rgba(0,0,0,0.7);
+  color:white;
+  z-index:999;
+  padding:5px;
+  &.animate-show {
+    transition: all linear 0.5s;
+  }
+  &.animate-show.ng-hide {
+    opacity:0;
+  }
+}
+
+.cursor-pointer {
+  cursor: pointer;
+}

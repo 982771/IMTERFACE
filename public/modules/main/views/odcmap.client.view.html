@@ -1,0 +1,44 @@
+<section data-ng-controller="ODCMapController" class="odc-map-container">
+	<div class="row">
+		<div class="col-md-5 page-heading">
+			Floor Map 
+		</div>
+		<div class="col-md-4 sub-heading">
+			Mumbai 
+		</div>
+		<div class="col-md-3">
+			<div class="col-md-4 legend-label" ng-click="show_legend=true">Legend</div>
+			<!-- <div class="legend-icon col-md-2" ng-click="show_legend=true"></div> -->
+			<div class="input-group col-md-8">
+                <input type="text" class="form-control input-md" ng-model="search" placeholder="Search" ng-focus="showFilters=true" ng-blur="showFilters=false" >
+            </div>
+ 
+		</div>
+	</div>
+	<!-- <div class="odcmap">
+		<div ng-repeat="row in map_data">
+			<div ng-repeat = "desk in row" class="desk-row desk-container" mapitem info="desk.info" col-span = "desk.colspan" row-span="desk.rowspan" include-horizontal-path= "desk.horizontal_paths" include-vertical-path= "desk.vertical_paths" type="desk.type" name="desk.map" on-hover-item="toggleTooltip(event, info, toggle, left, top)" search="search" ng-click = "openForm($index, row)">
+				
+			</div>
+		</div>
+	</div> -->
+	<div odcmap search="search" show-legend="show_legend"></div>
+	<!-- <button ng-click="openForm()">Edit</button> -->
+<!-- 	<div class="tool-tip animate-show" ng-show="showToolTip" ng-style="{left: tooltipLeft, top: tooltipTop}" ng-click="showToolTip=false" ng-mouseover="showToolTip=true">
+		<div class="row"> -->
+			<!--<div class="col-md-5 info-field-names">Name:</div>-->
+			<!-- <div class="col-md-4"><img class="mapimg" ng-src="{{data.Img}}"></img></div>
+			<div class="mapname">
+				<div class="col-md-8 info-field-name">{{data.Name}}</div>
+				<div class="col-md-8 info-field-data">{{data.Extn}}</div>
+				<div class="col-md-8 info-field-data">{{data.group_by}}</div>
+			</div>
+		</div>
+	</div> -->
+
+ <!-- <div modal-form open="open_form" template="templateUrl" close-dialog="closeForm()" info="modal_data"></div> -->
+	
+</section>
+
+
+	

@@ -1,0 +1,99 @@
+            <div class="hex {{item.classnames}}" ng-repeat = "item in menu"> 
+				<div class="inner" ng-show="{{item.iscontent}}">
+				<span class="hex-icon glyphicon {{item.glyph}}" ng-show="{{item.iscontent}}"></span> <br/>
+				<span class="hex-title-light" ng-show="{{item.iscontent}}">{{item.name}}</span>
+			</div>        
+				<a href="{{item.link}}" ng-show="{{item.iscontent}}"></a>        
+				<div class="corner-1"></div>
+				<div class="corner-2"></div>        
+			</div> 
+			<script type="text/javascript">
+		function gotoDashboard(){
+			window.location.href="#!/";
+		}
+
+	$(document).ready(function(){
+
+
+        var uniqueRandoms = [];
+        var load = "first";        
+
+        function makeUniqueRandom() {
+            // refill the array if needed
+            var numRandoms = $(".hex").length;
+            if (!uniqueRandoms.length) {
+                for (var i = 0; i < numRandoms; i++) {
+                    uniqueRandoms.push(i);
+                }
+            }
+            var index = Math.floor(Math.random() * uniqueRandoms.length);
+            var val = uniqueRandoms[index];
+
+            // now remove that value from the array
+            uniqueRandoms.splice(index, 1);
+
+            return val;
+
+        };
+
+           $(".hex").css({'opacity':0});
+
+        		setTimeout(function(){
+                
+                $(".hex").each(function(){
+
+                  var rand = makeUniqueRandom();
+                  var hex = $(this);
+
+                    hex.bind('inview', function(event, visible) {
+              if (visible) {
+                if(load == "first")
+                {
+                  
+                    setTimeout(function(){
+                      
+                     hex.css({'opacity':1});
+                     hex.removeClass("animated zoomIn").addClass("animated zoomIn");
+
+                    },30*rand);
+                  }
+
+                  else
+                  {
+                     hex.css({'opacity':1});
+                     hex.removeClass("animated zoomIn").addClass("animated zoomIn");
+                  }
+                     
+                     
+              } else {
+                     load = "nope";
+                     hex.css({'opacity':0});
+                     hex.removeClass("animated zoomIn");
+                     
+              }
+            });
+
+                });
+
+  /*          $(function () {
+  $.srSmoothscroll({
+    // defaults
+    step: 55,
+    speed: 400,
+    ease: 'swing',
+    target: $('.hex'),
+    container: $('body')
+  })
+})
+*/
+
+		},100);
+
+     
+
+	});
+
+   
+
+
+	</script>

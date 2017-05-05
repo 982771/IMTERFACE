@@ -1,0 +1,182 @@
+#small-title-bar{
+	@include breakpoint(tv){
+		display: none;	
+	}
+
+	@include breakpoint(desktop){
+		display: none;	
+	}
+
+	@include breakpoint(tablet){
+		display: block;	
+		position: fixed;
+	}
+
+	@include breakpoint(phablet){
+		display: block;	
+		position: fixed;
+	}
+
+	@include breakpoint(mobile){
+		display: block;	
+		position: fixed;
+	}
+
+}
+#big-title-bar{
+	z-index:999;
+	@include breakpoint(tv){
+		display: block;	
+		position: fixed;
+		background-color:white;
+	}
+
+	@include breakpoint(desktop){
+		display: block;	
+		position: fixed;
+		background-color:white;
+	}
+	@include breakpoint(tablet){
+		display: none;	
+	}
+
+	@include breakpoint(phablet){
+		display: none;	
+	}
+
+	@include breakpoint(mobile){
+		display: none;	
+	}
+}
+
+
+.current-user {
+    font-size: 0.4em;
+    margin-top: 2%;
+    color: #6C7A89;
+    font-weight: bold;
+    letter-spacing:normal;
+ }
+
+
+/* RESPONSIVE NAV BAR STARTS */
+
+.navbar-header{
+	padding-left: 20px;
+
+	@include breakpoint(tablet){
+		 float: none;
+	}
+
+	@include breakpoint(phablet){
+		 float: none;
+	}
+
+	@include breakpoint(mobile){
+		 float: none;
+	}
+}
+.navbar-toggle {
+	@include breakpoint(tablet){
+		 display: block;
+	}
+
+	@include breakpoint(phablet){
+		 display: block;
+	}
+
+	@include breakpoint(mobile){
+		display: block;
+	}
+}
+.navbar-collapse{
+	@include breakpoint(tablet){
+		  border-top: 1px solid transparent;
+        box-shadow: inset 0 1px 0 rgba(255,255,255,0.1);
+	}
+
+	@include breakpoint(phablet){
+		  border-top: 1px solid transparent;
+        box-shadow: inset 0 1px 0 rgba(255,255,255,0.1);
+	}
+
+	@include breakpoint(mobile){
+		 border-top: 1px solid transparent;
+        box-shadow: inset 0 1px 0 rgba(255,255,255,0.1);
+	}
+}
+.navbar-collapse.collapse{
+	@include breakpoint(tablet){
+		  display: none!important;
+	}
+
+	@include breakpoint(phablet){
+		  display: none!important;
+	}
+
+	@include breakpoint(mobile){
+		 display: none!important;
+	}
+}
+.navbar-nav{
+	@include breakpoint(tablet){
+		 float: none!important;
+        margin: 7.5px -15px;
+	}
+
+	@include breakpoint(phablet){
+		float: none!important;
+        margin: 7.5px -15px;
+	}
+
+	@include breakpoint(mobile){
+		float: none!important;
+        margin: 7.5px -15px;
+	}
+}
+.navbar-nav>li{
+	@include breakpoint(tablet){
+		   float: none;
+	}
+
+	@include breakpoint(phablet){
+		  float: none;
+	}
+
+	@include breakpoint(mobile){
+		 float: none;
+	}
+}
+ .navbar-nav>li>a{
+ 	@include breakpoint(tablet){
+		  padding-top: 10px;
+        padding-bottom: 10px;
+	}
+
+	@include breakpoint(phablet){
+		  padding-top: 10px;
+        padding-bottom: 10px;
+	}
+
+	@include breakpoint(mobile){
+		padding-top: 10px;
+        padding-bottom: 10px;
+	}
+ }
+ .navbar-collapse.collapse.in{
+ 	@include breakpoint(tablet){
+		   display: block !important;
+	}
+
+	@include breakpoint(phablet){
+		 display: block !important;
+	}
+
+	@include breakpoint(mobile){
+		 display: block !important;
+	}
+ }
+ .container-fluid{
+ 	padding-left: 0;
+ }
+/* RESPONSIVE NAV BAR ENDS */

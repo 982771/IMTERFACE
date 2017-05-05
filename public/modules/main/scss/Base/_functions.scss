@@ -1,0 +1,3 @@
+@function calc-px($sizes: 7){
+	@return ($sizes - 7) * 27px;
+}

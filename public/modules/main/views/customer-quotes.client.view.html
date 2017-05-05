@@ -1,0 +1,166 @@
+<section class="quote-wrapper-section clearfix" data-ng-controller="CustomerquotesController">
+<div class="page-heading">
+        Customer Quotes
+</div>
+<div ng-init = "find()">
+    <div class="row custArea">
+        <div class="clearfix">
+            <div class="access-container">
+                <div class="appreciation-link" data-toggle="modal" data-target="#showForm">
+                    <a href="" ng-click="openQuoteForm()"> Add Customer Appreciation</a>
+                </div>
+                <!-- search -->
+                <div class="search-container col-md-5 pull-right">
+                    <div id="custom-search-input">
+                        <div class="input-group col-md-12">
+                            <input type="text" class="form-control input-md" ng-model="search" placeholder="Search"/>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="quote-inner-section" >
+                <div class="col-xs-6 col-md-6  quote-wrapper" dir-paginate="appreciate in customerQuotes | filter:search | orderBy:'-created_at'| itemsPerPage:6" >
+                    <div class="quote-wrapper-inner thumbnail" data-toggle="modal" data-target="#myModal{{$index}}" style="margin-bottom: 0px;">
+                        <div class="appreciator-snap">
+                            <figure class="appreciator1">
+                                <img src="modules/main/img/icon_user.png" class="img-responsive img-circle" width="35">
+                            </figure>
+                            <div class="pointer"></div>
+                            <figure class="appreciator2">
+                                <img src="modules/main/img/icon_user.png" class="img-responsive img-circle" width="45">
+                            </figure>
+                        </div>
+                        <div class="tile-content">
+                            <div class="keymetric-based">
+                                <div class="appreciation-box">
+                                    <span class="quote-name " ng-model="writer" ng-bind="appreciate.by"></span>
+                                    <span class="arrow-right">&#9658;</span>
+                                    <span class="quote-name"  ng-bind="appreciate.to"></span>
+                                  <!--<span class="badge quote-date"> 5 days ago</span>-->
+                                </div>
+                                <div class="quote-details">
+                                    <blockquote class="truncate">
+                                      <p>{{appreciate.description}}</p>
+                                        <span class = "dotThree"  ng-click="openQuotePopup(appreciate, false)">....Read more</span>
+                                    </blockquote>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div id="tile-footer" style="text-align:right;">
+
+                          <button id="likesbtn" ng-click="updateLikes(appreciate)"><span ng-class="{'glyphicon glyphicon-thumbs-up': !appreciate.isLiked, 'glyphicon glyphicon-thumbs-up blue1': appreciate.isLiked}" title="{{appreciate.isLiked ? 'Unlike' : 'Like'}}">
+
+                          </span></button>
+
+                         <tooltip base = "appreciate.likes.length" content = "appreciate.names" style="text-align: left;"></tooltip>
+                      <div class="comm_ent" style="display:inline-block;">&nbsp;&nbsp;
+                        <span class="glyphicon glyphicon-comment cursor-pointer" style="color: #00ADEF;" ng-click="openQuotePopup(appreciate, true)"></span>
+                        {{appreciate.comments.length}}
+                      </div>
+                    </div>
+                </div>
+
+                <script type="text/ng-template" id="quotePopupTemplate">
+                  <div class="modal-body custPara" style="display: block;">
+                      <h4>Appreciated by {{customerQuote.by}} &#9658; {{customerQuote.to}} </h4>
+                      <h5><span class="glyphicon glyphicon-tag"></span>&nbsp;Posted on {{customerQuote.date.split("T")[0] | date: 'dd-MMM-yyyy'}}</h5>
+                      <div id="content">
+                        <blockquote>{{customerQuote.description}}</blockquote>
+                      </div>
+
+                      <div id="likes" style="text-align:right; border:0px solid #ddd; padding: 5px;">
+                        <button id="likesbtn" ng-click="updateLikes(customerQuote)"><span ng-class="{'glyphicon glyphicon-thumbs-up': !customerQuote.isLiked, 'glyphicon glyphicon-thumbs-up blue1': customerQuote.isLiked}" title="{{customerQuote.isLiked ? 'Unlike' : 'Like'}}"></span></button><tooltip base = "customerQuote.likes.length" content = "customerQuote.names" style="text-align: left;"></tooltip>&nbsp;&nbsp;
+
+                          <span class="glyphicon glyphicon-comment cursor-pointer" style="color: #00ADEF;" ng-click="showComments = true" ></span>
+                          {{customerQuote.comments.length}}
+
+
+                           <button class="editBtn pull-right" ng-click="openEditForm(customerQuote)" ng-hide="hideEdit">Edit</button>
+                      </div>
+
+                      <div ng-show="showComments">
+                        <div id="comments">
+                          <div class="row">
+                            <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
+                              <div id="pic">
+                                <img src="modules/main/img/icon_user.png" width="95%" style="padding: 1% 2%;">
+                              </div>
+                            </div>
+                            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6" style="padding:0px;">
+                              <h5 style="color: #00ADEF;"> {{current_user.ads_login_name}} </h5>
+                              <textarea ng-model="customerQuoteComment"></textarea>
+                            </div>
+                            <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2" style="text-align: right; top:50px;">
+                                <button ng-click="saveComment(customerQuote._id,customerQuoteComment); customerQuoteComment=''" style="cursor: pointer; padding: 3px 3px; background: #00ADEF; border: 1px solid #00ADEF; color:#f3f3f3; font-size:1.2em;" ng-disabled="!customerQuoteComment">Submit</button>
+                            </div>
+                          </div>
+                        </div>
+                          <div class="scrollCol" id="style-1" style="padding-top: 10px; height: 65%;">
+                          <div class="row" ng-repeat="commentObj in customerQuote.comments | orderBy: 'created_at': true">
+                            <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
+                              <div id="pic">
+                                <img src="modules/main/img/icon_user.png" width="95%" style="padding-top: 10px;">
+                              </div>
+                            </div>
+                            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6" style="padding:0px; margin-top: 3%;">
+                              <h5 style="color: #00ADEF; display: inline;">{{commentObj.created_by_name}}</h5>
+                              <span style="font-size: 5; margin-left: 3%;">Posted @ {{commentObj.created_at | date: 'dd-MMM-yyyy HH:mm:ss'}}</span>
+                              <h5 style="word-wrap: break-word;"> {{commentObj.comment}} </h5>
+                            </div>
+                            <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3" style="text-align:right; top:30px;">
+                              <button id="likesbtn" ng-click="updateLikes(customerQuote, commentObj)">
+
+                              <span ng-class="{'glyphicon glyphicon-thumbs-up': !commentObj.isLiked, 'glyphicon glyphicon-thumbs-up blue1': commentObj.isLiked}" title="{{commentObj.isLiked ? 'Unlike' : 'Like'}}"></span></button>
+                                <tooltip base = "commentObj.comment_likes.length" content = "commentObj.names" style="text-align: left;"></tooltip>
+
+                              <button id="likesbtn" ng-click="deleteComment(customerQuote,commentObj)" ng-hide="hideDelete">
+                              <span class="glyphicon glyphicon-trash blue1"></span></button>
+
+                            </div>
+                          </div>
+                          </div>
+                      </div>
+                  </div>
+                </script>
+            </div>
+
+
+        </div>
+    </div>
+
+    <!-- pagination code -->
+    <div class="row paginArea">
+      <div class="pagination-section pull-right">
+        <dir-pagination-controls
+            max-size="5"
+            direction-links="true"
+            boundary-links="true" class="col-md-12">
+        </dir-pagination-controls>
+      </div>
+    </div>
+</div>
+
+</section>
+<script type="text/javascript">
+    $(document).ready(function(){
+    $('[data-toggle="tooltip"]').tooltip();
+});
+
+
+
+
+
+
+
+
+    </script><!--
+<script type="text/javascript">
+   (function($){
+      $(window).load(function(){
+         $('.fixed-scrollCol').slimScroll({});
+      });
+    })(jQuery);
+</script> -->

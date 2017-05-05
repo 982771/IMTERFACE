@@ -1,0 +1,28 @@
+/*font-size*/
+$header-font: $size * 4px;
+$sub-header-font: $size * 2.5px;
+$text-font: $size * 1.4px;
+$p-font: $size * 2.6px;
+
+.page-heading{
+	font-size:2.55em;
+}
+
+.sub-heading{
+	font-size:2em;
+	color:#666;
+	margin-top:0.15em;
+}
+
+.sub-heading-small{
+	font-size:1.5em;
+	margin-top:0.3em;
+	color:#777;
+}
+
+.glyph-icon-small{
+	font-size:1.25em;
+	color:rgba(0,0,0,0.2);
+}
+
+

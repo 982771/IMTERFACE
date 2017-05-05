@@ -1,0 +1,66 @@
+.contri-container{
+	text-align:center;
+
+	.contri-heading{
+		border-bottom:2px solid purple;
+		height:40px;
+		padding:7px;
+		padding-bottom:0;
+		text-align:center;
+		font-size:1.9em;
+		text-align: center;
+	  width: 200px;
+	  display: block;
+	  margin-left: auto;
+	  margin-right: auto;
+	  color:$base-color-seven;
+	}
+
+	.contri-content{
+	  margin-left: auto;
+	  margin-right: auto;
+	  margin-top: 25px;
+				// border:1px solid yellow;	
+	}
+
+	.contributor-outer{
+		height:80px;
+		// border:1px solid green;	
+		text-align: center;
+		margin-top: 10px;
+		overflow:hidden;
+		.contri-image{
+			// width:14vmin;
+			// height: 14vmin;
+			height: 80px;
+			width: 80px;
+			float: left;
+			-moz-border-radius: 50%; 
+    		-webkit-border-radius: 50%;
+			border-radius:50% !important;
+			filter: gray; /* IE6-9 */
+			filter: grayscale(1); /* Firefox 35+ */
+			-webkit-filter: grayscale(1); /* Google Chrome, Safari 6+ & Opera 15+ */
+     
+		}	
+		.contri-name{
+			width:50%;
+			//width:auto;
+			text-shadow: 1px 1px 2px rgba(0,0,0,0.05);
+			padding-top: 20px;
+			float: left;
+	   		text-align: center;    
+			font-size: 1.4em;		
+			font-weight: bold;
+			color:rgba(0,0,0,0.6);
+			// border:1px solid blue;		
+		}
+	}
+}
+
+.contri-container .contributor-outer .contri-image:hover
+{
+	cursor:pointer;
+	-webkit-filter: grayscale(0%); /* Chrome, Safari, Opera */
+    filter: grayscale(0%);
+}

@@ -1,0 +1,18 @@
+.delete {
+	    color: #999;
+    	background: none;
+    	border: 0px;
+    	box-shadow: none;
+}
+
+.btn {
+	border-radius:0px;
+	//color:white;
+	&.submit-btn {
+		color:white;
+	}
+}
+
+.btn-default:hover {
+	background:none;
+}

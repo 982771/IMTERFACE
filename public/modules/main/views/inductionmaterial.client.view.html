@@ -1,0 +1,46 @@
+<section data-ng-controller="InductionmaterialController">
+	<div class="page-heading">
+		Induction Material
+	</div><br><br>
+
+	<div ng-init="find()">
+
+		<div class = "row">
+
+			<div class = "col-xs-8 col-sm-6 col-md-6 col-lg-6">
+				<p><span class = "inductionHeader">ODC Induction<hr/></span></p>
+					<div ng-show="'{{quicklink.section_header}}' == 'ODC INDUCTION'" id = 'oiListType' ng-repeat = 'quicklink in quicklinks'>
+						<span>{{quicklink.label}}</span>&nbsp;&nbsp;
+						<div class="previewIcon" ng-if="quicklink.docpath.split('.').pop() == 'pdf' "><a class="glyphicon glyphicon-eye-open" title="Preview" ng-href="{{quicklink.docpath}}" target="_blank"></a></div>
+						<a class="glyphicon glyphicon-download-alt" title="Download" id = "downloadIcon" ng-href="{{quicklink.docpath}}" ng-click="increment(quicklink)" download="{{quicklink.label}}"></a>
+
+					</div>
+			</div><!-- col-md-4 ENDS -->
+
+			<div class = "col-xs-8 col-sm-6 col-md-6 col-lg-6 spaceLine">
+				<p><span class = "inductionHeader">AGILE Induction</span></p>
+					<hr/>
+					<div ng-show="'{{quicklink.section_header}}' == 'AGILE INDUCTION'" id='aiListType' ng-repeat = 'quicklink in quicklinks'>
+			             <span>{{quicklink.label}}</span>&nbsp;&nbsp;
+									 <div class="previewIcon" ng-if="quicklink.docpath.split('.').pop() == 'pdf' "><a class="glyphicon glyphicon-eye-open" title="Preview" ng-href="{{quicklink.docpath}}" target="_blank"></a></div>
+			             <a class="glyphicon glyphicon-download-alt" title="Download" id = "downloadIcon" ng-href="{{quicklink.docpath}}" ng-click="increment(quicklink)" download="{{quicklink.label}}"></a>
+
+					</div>
+			</div> <!-- col-md-4 ENDS -->
+
+			<div class = "col-xs-8 col-sm-6 col-md-6 col-lg-6 spaceLine">
+				<p><span class = "inductionHeader">Domain CoE</span></p>
+					<hr/>
+					<div ng-show="'{{quicklink.section_header}}' == 'DOMAIN COE'" id='aiListType' ng-repeat = 'quicklink in quicklinks'>
+			             <span>{{quicklink.label}}</span>&nbsp;&nbsp;
+									 <div class="previewIcon" ng-if="quicklink.docpath.split('.').pop() == 'pdf' "><a class="glyphicon glyphicon-eye-open" title="Preview" ng-href="{{quicklink.docpath}}" target="_blank"></a></div>
+			             <a class="glyphicon glyphicon-download-alt" title="Download" id = "downloadIcon" ng-href="{{quicklink.docpath}}" ng-click="increment(quicklink)" download="{{quicklink.label}}"></a>
+
+					</div>
+			</div> <!-- col-md-4 ENDS -->
+
+		</div> <!-- ROW ENDS -->
+
+		</div>
+
+</section>

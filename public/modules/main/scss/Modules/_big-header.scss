@@ -1,0 +1,43 @@
+.header-text{
+	color:$base-color-five;
+    font-size: 3em;
+	letter-spacing: -3px;
+	margin-left:0px;
+	padding-right:30px;
+	.head {
+		font-weight: bold;
+		font-size:1.2em;
+	}
+
+	.head-first{
+	  font-size: 1.1em;
+	  letter-spacing: 0px;
+	}
+
+	.head-one{
+	color:$base-color-ten;
+	}
+
+	.head-two{  
+	color:$base-color-nine;
+	}
+
+	.head-three{
+	color:$base-color-three;
+	}
+
+	.head-four{
+	color:$base-color-eight;
+	}
+	.logo {
+		cursor: pointer;
+	}
+	.tagline{
+		cursor:default;
+		font-size:0.7em;
+		letter-spacing: 1px;
+		padding-left:10px;
+		font-weight: bold;
+		;
+	}
+}

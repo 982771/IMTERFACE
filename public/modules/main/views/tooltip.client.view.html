@@ -1,0 +1,5 @@
+<span class="tooltip-base" ng-mouseover = "showTooltip($event)" ng-mouseleave = "show = false">{{base}}</span>
+<div class="tool-tip animate-show" ng-show="show" ng-style="style">
+	<div ng-repeat = "data in content">{{data}}</div>
+
+</div>

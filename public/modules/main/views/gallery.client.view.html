@@ -1,0 +1,50 @@
+<section data-ng-controller="GalleryController" style="position:relative;">
+<div class="galleryMain" ng-init=find()>
+		<div class="page-heading">
+					Gallery - Albums
+		</div>
+		<ul class="nav nav-tabs">
+			<li ng-class="{active : $first}" ng-repeat="album in albums"><a data-toggle="tab" style="cursor:pointer" ng-click="showAlbums(album)">{{album.album_name}}</a></li>
+		</ul>
+	  <div id='carousel-custom' class='carousel slide' data-ride='carousel'>
+	    <div class='carousel-outer'>
+	        <!-- Wrapper for slides -->
+	        <div class='carousel-inner'>
+	            <div class='item'  ng-repeat="slideImage in slides_images.photos" ng-class="{active : $first}">
+	              <!-- <p ng-bind="slideImage.description"></p> -->
+	                <img  class="img-responsive" ng-src='{{slideImage.imagePath }}' alt='' style="width:100%;" />
+	                <div class="carousel-caption">
+	                  <h4>{{slideImage.photo_description}}</h4>
+	              </div>
+	              <div class="clearfix"></div>
+	            </div>
+	        </div>
+
+	        <!-- Controls -->
+	        <a class='left carousel-control' href='#carousel-custom' data-slide='prev'>
+	            <span class='glyphicon glyphicon-chevron-left'></span>
+	        </a>
+	        <a class='right carousel-control' href='#carousel-custom' data-slide='next'>
+	            <span class='glyphicon glyphicon-chevron-right'></span>
+	        </a>
+	    </div>
+
+	    <!-- Indicators -->
+	    <ol class='carousel-indicators'>
+	        <li ng-repeat="slideImage in slides_images.photos" data-target="#carousel-custom" data-slide-to={{$index}} ng-class="{active : $first}" >
+	          <img ng-src='{{slideImage.imagePath}}' alt='' />
+	        </li>
+	    </ol>
+	</div>
+</div>
+
+
+  <script type="text/javascript">
+  	$(document).ready(function(){
+      $('#carousel-custom').carousel({
+          interval: false
+      });
+    });
+
+  </script>
+</section>

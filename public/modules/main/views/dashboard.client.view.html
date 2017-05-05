@@ -1,0 +1,290 @@
+<div  data-ng-controller="DashboardController">
+
+	<div class="row">
+		<div id="div-container" class="col-md-12 col-lg-12 make-responsivepoll">
+			<div class="row height100">
+				<!-- Events @ ODC -->
+				<div class="col-md-8 col-md-push-4 b" style="height:50%">
+					<div class="dash-inner dash-inner-panel-4">
+						<div class="dash-content">
+							<div class="dash4-head">
+								&nbsp Events @ ODC
+								<a href="http://localhost:6002/" target="_blank">
+									<span class="pull-right glyphicon glyphicon-user" title="Link to admin portal" ng-hide="hideEdit"/>
+								</a>
+							</div>
+							<div class="dash4 data">
+								<div class="ticker4">
+									<ul class="noticontainer">
+										<li class="notiitem" ng-repeat="event in eventData track by $index">
+											<div class="notiinner">
+												<span class="glyph-icon-small glyphicon {{eventIcon[$index]}}"></span> &nbsp
+												{{event.eventText}}
+											</div>
+										</li>
+									</ul>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-4 col-md-pull-8  height100">
+					<div class="row height100">
+						<!-- TCS News -->
+						<div class="col-md-12 b" style="height:66.66%; margin-bottom:1%; padding-bottom:3%;">
+							<div class="dash-inner dash-inner-panel-1">
+								<i class="dash-icon fa fa-twitter"></i>
+								<div class="dash-content">
+									<div class="dash123-head dash-head-small">
+										@TCS
+									</div>
+
+									<div class="dash123-data dash-data-small" id="twitter-widget-holder">
+										<a class="twitter-timeline" href="https://twitter.com/TCS_News" data-widget-id="650962913008685056" data-chrome="transparent noscrollbar noheader nofooter" data-tweet-limit="8" width="95%" data-theme="dark" data-aria-polite="assertiveness">Tweets by @TCS_News</a>
+
+									</div>
+
+								</div>
+							</div>
+						</div>
+						<!-- Firm News -->
+						<div class="col-md-12  b" style="height:33.33%; margin-bottom:2.5%;">
+							<div class="dash-inner dash-inner-panel-2">
+								<span class="dash-icon glyphicon glyphicon-globe"></span>
+								<div class="dash-content">
+									<div class="dash123-head">
+										@FIRM
+									</div>
+									<div class="dash123-data">
+									<div class="ticker2">
+											<ul class="noticontainer">
+												<li class="notiitem" ng-repeat="rssfeed in rssfeeds">
+													<a href={{rssfeed.link}} target="_blank">
+														<div class="astylehead">
+															{{rssfeed.title}}
+														</div>
+														<div class="astylecontent">
+															<img class="notiimage" src={{rssfeed.thumb_nail.url}} />
+															<span class="astyledesc">
+																{{rssfeed.description}}
+															</span>
+														</div>
+													</a>
+												</li>
+											</ul>
+									</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-8 col-md-push-4  make-responsive" style="height:16.66%; margin-bottom:0.5%; padding-top:2%;">
+					<div class="row height100">
+						<div class="col-xs-4 b height100 no-pad">
+							<div id="fact1" class="div-fact">
+								<div class="div-fact-sec1">
+									<div class="div-fact-sec1-figure">
+										<span class="glyphicon glyphicon-map-marker div-fact-sec1-icon"></span>
+										<a style="cursor:default; z-index:1010;" class="color1">6</a>
+									</div>
+								</div>
+								<div class="div-fact-sec2">
+									<div class="div-fact-sec2-text">Countries</div>
+								</div>
+							</div>
+						</div>
+						<div class="col-xs-4 b height100 no-pad">
+							<div id="fact2" class="div-fact">
+								<div class="div-fact-sec1">
+									<div class="div-fact-sec1-figure">
+										<span class="glyphicon glyphicon-th div-fact-sec1-icon"></span>
+										<a style="cursor:default;z-index:1010;" class="color2">5</a>
+									</div>
+								</div>
+
+								<div class="div-fact-sec2">
+									<div class="div-fact-sec2-text">ODC's</div>
+								</div>
+							</div>
+						</div>
+						<div class="col-xs-4 b height100 no-pad">
+							<div  id="fact3" class="div-fact">
+								<div class="div-fact-sec1">
+									<div class="div-fact-sec1-figure color3 make-responsivenumbers">
+										<span class="glyphicon glyphicon-user div-fact-sec1-icon"></span>
+										241
+									</div>
+								</div>
+								<div class="div-fact-sec2">
+									<div class="div-fact-sec2-text ">Associates</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-8 col-md-push-4  make-responsive make-responsivepoll" style="height:33.33%;">
+					<div class="row height100">
+						<div class="col-xs-12 col-sm-12 col-md-8 col-lg-8 b height100 " style="margin-bottom:1%;" >
+							<!-- Poll -->
+							<div class="dash-inner dash-inner-panel-5">
+								<span class="dash-icon fa fa-pie-chart"></span>
+								<div class="dash5-head">
+									&nbsp &nbsp<span class="glyphicon glyphicon-tasks"></span>
+									&nbsp Poll of the ODC
+								</div>
+								<div id="pollQuestion" class="poll-question">
+									{{poll.question}}
+								</div>
+								<div id="pollOptions" ng-if="!pollStatus">
+									<div class="poll-options">
+										<div ng-repeat="option in poll.choices">
+										<input type="radio" name="pom" ng-model="$parent.pollSelected" value= "{{option.option_text}}">{{option.option_text}}<br/>
+									    </div>
+										<br/>
+										<button type="button" id="btnPoll" class="btn btn-primary btn-sm" text="Vote" name="vote" ng-click="savePollResult(pollSelected)"> Vote </button>
+									</div>
+								</div>
+
+								<div id="pollResult" ng-if="pollStatus">
+									<div class="poll-result">
+										<div ng-repeat="option in poll.choices track by $index">
+										{{option.option_text}}&nbsp;
+										({{option.count}})<br/>
+											<div class="progress">
+												  <div class="progress-bar" role="progressbar" aria-valuenow="{{pollPercentage[$index]}}" aria-valuemin="0" aria-valuemax="100" style="width: {{pollPercentage[$index]}}%">
+												  </div>
+											</div>
+									    </div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<!-- Feedback -->
+						<div class="col-xs-12 col-sm-12 col-md-4 col-lg-4 b height100 make-responsivepoll" style="border:1px;">
+							<div class="dash-inner dash-inner-panel-6" style="border:1px;">
+								<span class="dash-icon fa fa-envelope"></span>
+								<div class="dash6-head animate-show" ng-hide="showMessage">
+									&nbsp &nbsp<span class="glyphicon glyphicon-pencil"></span>
+									&nbsp Write to us
+								</div>
+								 <div class="mail-us animate-show" ng-hide="showMessage">
+									<textarea rows="6" ng-model="message">
+									</textarea>
+									<button type="button" id="btnPoll" class="btn submit-btn pull-right" text="Feedback" name="feedback" ng-click="sendFeedback(message);message = ''"> Submit </button>
+								</div>
+								<div class="message animate-show" ng-show="showMessage">
+									Thank you for your valuable feedback.
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+		</div>
+	</div>
+</div>
+<script type="text/javascript">
+	$(function() {
+
+		$('.ticker2').easyTicker({
+			direction: 'up',
+			easing: 'swing',
+			speed: 'slow',
+			interval: 5000,
+			height: '100%',
+			visible:1,
+			mousePause: 1,
+			controls: {
+				up: '',
+				down: '',
+				toggle: '',
+				playText: 'Play',
+				stopText: 'Stop'
+			}
+		});
+
+
+		$('.ticker4').easyTicker({
+			direction: 'up',
+			easing: 'swing',
+			speed: 'slow',
+			interval: 2000,
+			//height: '100%',
+			visible:8,
+			mousePause: 1,
+			controls: {
+				up: '',
+				down: '',
+				toggle: '',
+				playText: 'Play',
+				stopText: 'Stop'
+			}
+		});
+	});
+
+$(document).ready(function(){
+
+	$(".astyledesc").dotdotdot({
+//	configuration goes here
+});
+
+	$('#fact1').hide();
+	$('#fact2').hide();
+	$('#fact3').hide();
+	setTimeout(function(){
+		$('#fact1').show().addClass('animated fadeIn');
+	},300);
+
+	setTimeout(function(){
+		$('#fact2').show().addClass('animated fadeIn');
+	},600);
+
+	setTimeout(function(){
+		$('#fact3').show().addClass('animated fadeIn');
+	},900);
+	// setTimeout(function(){
+	// 	twttr.widgets.load();
+	// },1000);
+
+
+
+});
+
+(function($){
+    $(window).load(function(){
+      /* initialize scrollbar */
+
+      $("#twitter-widget-holder").mCustomScrollbar({
+        theme:"minimal",
+        scrollInertia: 60,
+        mouseWheel:{ enable:true }
+      });
+      /* insert twitter widget js in window load fn */
+      !function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");
+
+    });
+
+  })(jQuery);
+
+
+
+
+$(document).ready(function(){
+
+
+	    $('.color1').tooltip({
+	    	title: "India \nUruguay \nBelgium \nGermany \nUnited States \nUnited Kingdom",
+	    	placement: "right",
+	    	template: '<div class="tooltip fade right in" role="tooltip" id="tooltip311524" style="top: -26px; left: 124.453px; display: block;"><div class="tooltip-arrow"></div><div class="tooltip-inner blockdisplay">India \nUruguay \nBelgium \nGermany \nUnited States \nUnited Kingdom</div></div>'
+	});
+		$('.color2').tooltip({
+			title: "Mumbai \nKolkata \nBangalore \nGurgaon \nUruguay",
+			placement: "right",
+			template: '<div class="tooltip fade right in" role="tooltip" id="tooltip311524" style="top: -26px; left: 124.453px; display: block;"><div class="tooltip-arrow"></div><div class="tooltip-inner blockdisplay">Mumbai \nKolkata \nBangalore \nGurgaon \nUruguay</div></div>'
+		});
+
+	});
+
+
+
+</script>

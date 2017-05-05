@@ -1,0 +1,180 @@
+.storyMain{
+    margin-top: 2em; 
+
+    .visibleStory{
+        height: 10em;
+		    background: linear-gradient(to left, white 50%, rgba(91,101,158,0.4) 50%);
+        background-size: 200% 100%;
+        background-position:right bottom;
+        margin-left:10px;
+        transition:all 0.5s ease;
+    		border-left : 2px solid #0065BD;
+    		padding: 0px 5px;  
+        cursor: pointer;
+
+        h4 {
+            font:{
+                size: $sub-header-font;
+                weight:bold;
+                family: 'Raleway', sans-serif; 
+                }       
+                margin:0;  
+                color: #0065BD !important;
+
+        }
+
+        hr {
+            border-bottom: 1px solid #ccc;
+            width:100%;
+            margin: ($hex-font-size) auto;
+            color:#0065BD !important;
+        }
+
+        p {
+            font:{
+              size: $hex-font-size * 1.3;
+              family: 'Raleway', sans-serif; 
+            }
+            text-shadow: none;
+
+        }
+
+       
+$line-height: 1.4;
+$lines-to-show: 3;
+
+.dotThree{
+    position: absolute;
+    bottom: 0px;
+    right: 20px;
+    padding-top:30px;
+    font:{
+              size: $hex-font-size * 1.2;
+            }
+    color: #0065BD;        
+}
+
+    p.truncate{
+    
+        height: 3em;
+        line-height: 1.5em;
+        width: auto;
+        overflow: hidden;
+        position: relative;
+        
+        }
+    h4.truncatetitle{
+    
+        height: 1.2em;
+        width: auto;
+        overflow: hidden;
+        position: relative;
+        
+        }
+
+}
+
+
+	
+	.visibleStory:hover {
+    //background-position:left top;  
+	}
+	
+}
+
+.sheading {
+            font:{
+              size: $hex-font-size * 1.5;
+              weight:bold;
+              family: 'Raleway', sans-serif; 
+            }
+            text-shadow: none;
+            color: #0065BD; 
+        }
+	
+	.glyphicon-2x{
+	  font-size:2em;
+	}
+	
+	.float-right{
+	float:right;
+	}
+
+    .storyContent{
+        font:{
+              size: $hex-font-size * 1.2;
+              family: 'Raleway', sans-serif; 
+            }
+            text-shadow: none;
+            position:absolute;padding-right:10%;
+            line-height: 2em;
+
+            span{
+              color: #0065BD;
+            }
+    }
+
+.story-link { float:none;}   
+
+
+#successStories{
+    @include modal(#002960);
+} 
+
+.required:after {
+    color: red;
+    content: '*';
+    font-weight:bold;
+}
+
+h4{
+    margin-top:0px;
+}
+.pagination-section{
+   
+    @include breakpoint(tv){
+        display:block;
+    }
+    @include breakpoint(desktop){
+        display:block;
+    }
+        @include breakpoint(tablet){
+        display:block;
+    }
+    @include breakpoint(phablet){
+        display:block;
+    }
+    @include breakpoint(mobile){
+        display:block;
+    }
+}
+
+ .date1{
+            font-size: 0.2em;
+
+        }
+
+.date{
+    margin-left: 0px;
+}
+
+.editsBtn{
+  background-color:#0065BD;
+  color: white;
+  border: 1px solid #0065BD; 
+  margin-left: 2%;
+  font-size: 1.5em;
+}
+
+.tooltip-inner {
+    display:inline;
+    width:300px;
+    line-height:16px;
+}
+
+.blockdisplay{
+    display:block !important;
+    width:100%;
+}
+
+    

@@ -1,0 +1,87 @@
+<section class="clearfix" data-ng-controller="MandatoryTrainingsController"  ng-init="find()">
+<div class="page-heading">
+        Mandatory Trainings
+</div>
+<div ng-hide="hideEdit" class=" newTrainings-link" data-toggle="modal" data-target="#showForm">
+    <a href="" ng-click="openTrainingsForm()">Add New Trainings</a>
+</div>
+<br><br>
+<span class="required reqtext">Please log in to Ultimatix before you access any of the links given here</span>
+
+
+    <div class="container-fluid skill-set">
+        <div class="row " style="height:100%">
+            <div class="col-lg-3 col-md-4 col-sm-6 border" ng-repeat="training in mandatoryTrainings | orderBy: '-created_at'">
+                <a ng-href="{{training.link}}" target="_blank">
+                    <div class="{{training.priority}}">
+                        {{training.name}}
+                    </div>
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<script type="text/javascript">
+    $(document).ready(function(){
+        $('a:nth-child(3n+1)').css("float","left");
+        $('a:nth-child(3n+2)').css("float","right");
+    });
+</script>
+
+           <!--  <div class="col-lg-3 col-md-4 col-sm-6 border" >
+                <a href="https://ievolve.ultimatix.net/iEvolve/index.html?cd=1456830699434#/lnk/Course/Search/CourseDetails/15802" target="_blank"><div class="high">
+                    PI-WBT
+                </div></a>
+            </div>
+            <div class="col-lg-3 col-md-4 col-sm-6 border">
+                <a href="https://ievolve.ultimatix.net/iEvolve/index.html?cd=1456830699434#/lnk/Course/Search/CourseDetails/43893" target="_blank"><div class="medium">
+                    iSecurity WBT
+                </div></a>
+            </div>
+            <div class="col-lg-3 col-md-4 col-sm-6 border">
+                <a href="https://ievolve.ultimatix.net/iEvolve/index.html?cd=1456830699434#/lnk/Course/Search/CourseDetails/12095" target="_blank"><div class="low center">
+                    DAR-WBT
+                </div></a>
+            </div>
+            <div class="col-lg-3 col-md-4 col-sm-6 border">
+                <a href="https://ievolve.ultimatix.net/iEvolve/index.html?cd=1456830699434#/lnk/Course/Search/CourseDetails/6852"target="_blank"><div class="low">
+                    SSA WBT
+                </div></a>
+            </div>
+            <div class="col-lg-3 col-md-4 border col-sm-6">
+                <a href="https://ievolve.ultimatix.net/iEvolve/index.html?cd=1456830699434#/lnk/Course/Search/CourseDetails/50077" target="_blank"><div class="medium">
+                    Domain CoE
+                </div></a>
+            </div>
+            <div class="col-lg-3 col-md-4 border col-sm-6">
+                <a href="https://ievolve.ultimatix.net/iEvolve/index.html?cd=1456830699434#/lnk/Course/Search/CourseDetails/7408" target="_blank"><div class="medium ">
+                    iSecurity Quiz
+            </div></a>
+            </div>
+            <div class="col-lg-3 col-md-4 border col-sm-6">
+                <a href="https://ievolve.ultimatix.net/iEvolve/index.html?cd=1456830699434#/lnk/Course/Search/CourseDetails/49161" target="_blank"><div class="high">
+                    Agile
+                </div></a>
+            </div> 
+            <div class="col-md-3 border" >
+                <a href="https://ievolve.ultimatix.net/iEvolve/index.html?cd=1456830699434#/lnk/Course/Search/CourseDetails/9767" target="_blank"><div class="high">
+                    PI - Test
+                </div></a>
+            </div>
+            <div class="col-lg-3 col-md-4 border col-sm-6">
+                <a href="https://ievolve.ultimatix.net/iEvolve/index.html?cd=1456830699434#/lnk/Course/Search/CourseDetails/50313" target="_blank"><div class="medium">
+                    iQMS Quiz
+            </div></a>
+            </div>
+            <div class="col-lg-3 col-md-4 border col-sm-6">
+                <a href="https://knowmax.ultimatix.net/sites/hitech-isu/fg/hr/LnD/Account%20Connect%20MOM/Digital%20Events@HiTech.aspx?PageView=Shared" target="_blank"><div class="high">
+                    Digital
+                </div></a>
+            </div> 
+            <div class="col-md-3 border" >
+                <a href="https://ievolve.ultimatix.net/iEvolve/index.html?cd=1456830699434#/lnk/Course/Search/CourseDetails/48590" target="_blank"><div class="medium">
+                    iQMS - WBT
+                </div></a>
+            </div> -->
+        

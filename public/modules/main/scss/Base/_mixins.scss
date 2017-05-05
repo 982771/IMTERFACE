@@ -1,0 +1,65 @@
+@mixin breakpoint($point) {
+@if $point == mobile {
+@media only screen and (max-width : 479px) { 
+@content ; 
+}
+}
+@else if $point == phablet {
+@media only screen and (min-width : 480px) and (max-width : 766px) { @content ; }
+}
+@else if $point == tablet {
+@media only screen and (min-width : 767px) and (max-width : 991px) { @content ; }
+}
+@else if $point == desktop {
+@media only screen and (min-width : 992px) and (max-width : 1200px) { @content ; }
+}
+@else if $point == tv {
+@media only screen and (min-width : 1201px) { @content ; }
+}
+@else if $point == d1 {
+@media only screen and (min-width : 768px) and (min-height : 1024px) { @content ; }
+}
+
+}  
+
+
+@mixin modal($color) {
+	font-family: Raleway, sans-serif !important;
+	.modal-content {
+		border:none;
+	}
+	.modal-header {
+		//#006983
+		background-color:$color;
+		color:white;
+		font-weight:bold;
+	}
+	.modal-body {
+		background-color:white;
+		label {
+			color:$color;
+			font-size: 1.2em;
+			font-weight:bold;
+			//color:white;
+		}
+		.form-control {
+			font-size: 1.2em;
+			color:black;
+			border-radius: 0px;
+			border: 2px solid #ccc;
+		}
+		.btn {
+			padding:6% 30%;
+			// border-radius:0px;
+			// color:white;
+			&.submit-btn {
+				background-color:$color;
+				// color:white;
+			}
+		}
+		.margin-above {
+			margin-top: 10px;
+			//padding-right:15px;
+		}
+	}
+}

@@ -1,0 +1,81 @@
+<div class="page-heading">
+	Proof of Concept (PoC)
+</div>
+
+<div data-ng-controller ="PocController">
+	<div ng-init = "find()">
+		<div class="storyContent col-md-12 col-lg-12 col-xs-12 col-sm-12" ng-repeat="poc in pocs">
+		</div>
+		
+		<div class = "theFullStory">
+			<span class="close-button glyphicon glyphicon-2x glyphicon-remove float-right" ng-click="closeStory()">
+			</span>
+			<span style ="color:#002960;"><h3>{{showArticle.title}} - By {{showArticle.by}}</h3> </span>
+
+			<p class= "date">{{showArticle.created_at.split("T")[0] | date: 'dd-MMM-yyyy'}}
+			<hr/><br>
+			<!-- <p ng-bind-html="showArticle.content"></p> -->
+			<p id="contentBlock"></p>
+			
+			<div class="edit" ng-hide="hideEdit">
+                <button class="editpocBtn pull-right" ng-click="openEditForm(showArticle)">Edit</button>
+            </div>
+			<!-- <span class = "sheading1" ng-if = "showArticle.problem">Problem : <br><br></span><p ng-bind-html="showArticle.problem" ng-if = "showArticle.problem"></p>
+			<span class = "sheading1" ng-if = "showArticle.approach">Approach : <br><br></span><p ng-bind-html="showArticle.approach" ng-if = "showArticle.approach"></p>
+			<span class = "sheading1" ng-if = "showArticle.impact">Impact : <br><br></span><p ng-bind-html="showArticle.impact" ng-if = "showArticle.impact"></p>
+			<span class = "sheading1" ng-if = "showArticle.bc">Business challenge : <br><br></span><p ng-bind-html="showArticle.bc" ng-if = "showArticle.bc"></p>
+			<span class = "sheading1" ng-if = "showArticle.solution">Our Solution : <br><br></span><p ng-bind-html="showArticle.solution" ng-if = "showArticle.solution"></p>
+			<span class = "sheading1" ng-if = "showArticle.results">Results : <br><br></span><p ng-bind-html="showArticle.results" ng-if = "showArticle.results"></p> -->
+		</div>
+
+		<div class="appreciation-link story-link" data-toggle="modal" data-target="#showForm" style='float:none'>
+            <a href="" ng-click="openSuccessForm()" style="color:#0065BD;"> Add PoCs</a> 
+    	</div>		
+
+		<div class = "row story_div">
+			<div class = "story_module col-md-4 col-lg-4 col-xs-12 col-sm-6" dir-paginate="poc in pocs | orderBy:'-created_at' | itemsPerPage:9 "ng-click="loadContent(poc)">
+				<div class = "pocMain">
+					<div class = "visibleStory1" style="height:12em;">
+						<h4 class = "trunchead" style="line-height:1.2em">{{poc.title}} - By {{poc.by}}</h4>
+						<hr/>
+						<span class = "dotThree">....Read More</span>
+						<p class = "truncate1">
+							{{poc.desc}}
+						</p>
+					</div>
+				</div>
+			</div>
+		</div><!-- ROW ENDS -->
+		  
+
+
+	 	<!-- pagination code -->
+	 	<div class="row paginArea">
+		    <div class="pagination-section pull-right">
+		        <dir-pagination-controls
+			        max-size="5"
+			        direction-links="true"
+			        boundary-links="true" class="col-md-12" ng-click="paganimate()">
+		        </dir-pagination-controls>    
+		    </div>
+		</div>
+	</div>
+
+
+
+<script type="text/javascript">
+ $('body').bind('keyup', function(e) {
+if(e.keyCode==27){
+
+	if(!$(".story_module").is(":visible"))
+	{
+	   $(".close-button").click();
+    }
+}
+});
+
+ $(document).ready(function(){
+
+ 	$(".trunchead").dotdotdot();
+ });
+</script>

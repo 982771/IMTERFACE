@@ -1,0 +1,15 @@
+.content-holder{	
+    height: 90%;
+    max-height: 90%;
+    min-height: 200px;
+   // border:1px solid silver;
+    overflow-y: auto;
+    overflow-x: hidden; 
+    top: 60px;
+    position: fixed; 
+    padding:10px 35px;
+}
+
+.nobar::-webkit-scrollbar { width: 0 !important }
+.nobar { -ms-overflow-style: none; }
+.nobar { overflow: -moz-scrollbars-none; }

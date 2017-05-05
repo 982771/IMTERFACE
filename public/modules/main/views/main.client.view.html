@@ -1,0 +1,66 @@
+<section data-ng-controller="MainController">
+	<div class="row">
+		<div class="col-md-12 col-sm-12 col-xs-12">
+			<div id="small-title-bar" class="small-header-container">
+				<nav class="navbar navbar-inverse">
+					<div class="container-fluid" style = "z-index : 1000;">
+						<!-- Brand and toggle get grouped for better mobile display -->
+						<div class="navbar-header">
+							<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+								<span class="sr-only">Toggle navigation</span>
+								<span class="icon-bar"></span>
+								<span class="icon-bar"></span>
+								<span class="icon-bar"></span>
+							</button>
+							<a class="navbar-brand" href="layout.server.view.html#!/interFACE">interFACE</a>
+						</div>
+
+						<!-- Collect the nav links, forms, and other content for toggling -->
+						<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+							<ul class="nav navbar-nav">
+								<li><a href="history.client.view.html#!/history">ODC History<span class="sr-only">(current)</span></a></li>
+								<li><a href="inductionmaterial.client.view.html#!/inductionmaterial">Induction Material</a></li>
+								<li><a href="/">Global Foot Print</a></li>
+								<li><a href="customer-quotes.client.view.html#!/customerQuotes">Customer Quotes</a></li>
+								<li><a href="successstories.client.view.html#!/successstories">Success Stories</a></li>
+								<li><a href="/">Gallery</a></li>
+								<li><a href="/">ODC Calendar</a></li>
+								<!-- <li class="dropdown">
+									<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
+									<ul class="dropdown-menu">
+										<li><a href="#">Action</a></li>
+										<li><a href="#">Another action</a></li>
+										<li><a href="#">Something else here</a></li>							            
+									</ul>
+								</li> -->
+							</ul>							      
+							<!--<ul class="nav navbar-nav navbar-right">
+								<li><a href="#">Link</a></li>							        
+							</ul> -->
+						</div><!-- /.navbar-collapse -->
+					</div><!-- /.container-fluid -->
+				</nav>	 
+			</div> <!-- small-title-bar-ends -->
+			
+			<div id="big-title-bar">
+				<div class="header-text" onclick="gotoDashboard()">
+					<span class="head head-first">inter</span>
+					<span class="head head-one">F</span>
+					<span class="head head-two">A</span>
+					<span class="head head-three">C</span>
+					<span class="head head-four">E</span>
+				</div>
+			</div> <!-- big-title-bar-ends -->
+
+			<div class="row">
+				<div class="col-md-9 col-sm-12 col-xs-12 content-holder nobar malihu-scroll">
+					<section data-ui-view style="height:100%"></section>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- right navbar -->		
+	<div id="lol" class="matrix-container ng-cloak " data-ng-include="'/modules/main/views/hexnav.client.view.html'">    
+	</div> <!-- right navbar matrix-container -->
+</section>

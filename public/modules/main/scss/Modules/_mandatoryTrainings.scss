@@ -1,0 +1,98 @@
+.border{
+			min-height:230px;
+			min-width:230px;
+		}
+
+.center{
+		margin: auto;
+		position: relative;
+  		top: 50%;
+  		transform: translateY(50%);
+	}
+.skill-set{
+	background-image: url('../img/stripes.png');
+	margin-top:0.5%;
+	.high{
+			width:220px;
+			height: 220px;
+			border-radius:50%;
+			background-color: #fff; 
+			font-size: 2em;
+			text-align:center;
+			vertical-align:middle;
+			display: table-cell;
+			font-weight:bold;
+			color:#c10b01;
+		}
+	.medium{
+			width:180px;
+			height: 180px;
+			border-radius:50%;
+			background-color: #fff;
+			font-size: 1.8em;
+			text-align:center;
+			vertical-align:middle;
+			display: table-cell;
+			font-weight:bold;
+			color:#F49218;
+
+		}
+	.low{
+			width:140px;
+			height: 140px;
+			border-radius:50%;
+			background-color: #fff;
+			font-size: 1.5em;
+			text-align:center;
+			vertical-align:middle;
+			display: table-cell;
+			font-weight:bold;
+			color:green;
+			
+
+		}
+}
+.high:hover{
+	 box-shadow: 0 15px 20px rgba(0, 0, 0, 0.3);
+	 cursor:pointer;
+	 transition: all 0.6s ease;
+	 background-color:#009aa6;
+}
+.medium:hover{
+	 box-shadow: 0 15px 20px rgba(0, 0, 0, 0.3);
+	 cursor:pointer;
+	 transition: all 0.6s ease;
+	 background-color:#002960;
+}
+.low:hover{
+	 box-shadow: 0 15px 20px rgba(0, 0, 0, 0.3);
+	 cursor:pointer;
+	 transition: all 0.6s ease;
+	 background-color:#00adef;
+}
+
+a:hover { text-decoration: none; }
+
+.newTrainings-link {
+
+}
+.newTrainings-link a,
+.newTrainings-link a:hover {
+  color: $base-color-six;
+  font-family: helvetica;
+  font-size: 20px;
+  text-decoration:none;
+}
+
+.ngdialog-content .modal-content {
+    border-radius: 0;
+    
+}
+.ngdialog-content .modal-header{
+
+  background: $base-color-six;
+}
+
+#mandateTrainings{
+    @include modal(#009AA6);
+} 

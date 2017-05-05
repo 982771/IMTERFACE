@@ -1,0 +1,78 @@
+<div class="page-heading">
+	Success Stories
+</div>
+
+<div data-ng-controller ="SuccessstoriesController">
+	<div ng-init = "find()">
+		<div class="storyContent col-md-12 col-lg-12 col-xs-12 col-sm-12" ng-repeat="story in successStories">
+		</div>
+		<div class = "theFullStory">
+			<span class="close-button glyphicon glyphicon-2x glyphicon-remove float-right" style="cursor: pointer;" ng-click="closeStory()" >
+			</span>
+			<span style ="color: #0065BD;"><h3>{{showArticle.title}}</h3> </span>
+
+			<p class= "date">{{showArticle.successdate.split("T")[0] | date: 'dd-MMM-yyyy'}}</p>
+			<hr/><br><br>
+			
+			<p ng-bind-html="showArticle.content"></p>
+			<span class = "sheading" ng-if = "showArticle.problem">Problem : <br><br></span><p ng-bind-html="showArticle.problem" ng-if = "showArticle.problem"></p>
+			<span class = "sheading" ng-if = "showArticle.approach">Approach : <br><br></span><p ng-bind-html="showArticle.approach" ng-if = "showArticle.approach"></p>
+			<span class = "sheading" ng-if = "showArticle.impact">Impact : <br><br></span><p ng-bind-html="showArticle.impact" ng-if = "showArticle.impact"></p>
+			<div class="edit" ng-hide="hideEdit">
+                <button class="editsBtn pull-right" ng-click="openEditForm()">Edit</button>
+            </div>  
+			<!-- <span class = "sheading" ng-if = "showArticle.challenge">Business challenge : <br><br></span><p ng-bind-html="showArticle.challenge" ng-if = "showArticle.challenge"></p>
+			<span class = "sheading" ng-if = "showArticle.solution">Our Solution : <br><br></span><p ng-bind-html="showArticle.solution" ng-if = "showArticle.solution"></p>
+			<span class = "sheading" ng-if = "showArticle.results">Results : <br><br></span><p ng-bind-html="showArticle.results" ng-if = "showArticle.results"></p> -->
+		</div>
+
+		<div class="appreciation-link story-link" data-toggle="modal" data-target="#showForm" style='float:none'>
+            <a href="" ng-click="openSuccessForm()" style="color:#0065BD"> Add Success Story</a> 
+         </div>
+
+		<div class = "row story_div">
+			<div class = "story_module col-md-4 col-lg-4 col-xs-12 col-sm-6" dir-paginate="story in successStories | orderBy:'-created_at' | itemsPerPage: 9 "ng-click="loadContent(story)">
+				<div class = "storyMain">
+					<div class = "visibleStory">
+						<h4 class="truncatetitle"  ng-mouseover="fulltitle(story.title)" data-original-title={{story.title}}>{{story.title}}</h4>
+						<hr/>
+
+						<span class = "dotThree">....Read More</span>
+						<p class = "truncate">
+							{{story.content}}
+						</p>
+					</div>
+				</div>
+			</div>
+		</div><!-- ROW ENDS -->
+
+		
+	</div>
+
+</div>
+ <!-- pagination code -->
+           <div class="pagination-section pull-right" >
+
+
+                <dir-pagination-controls
+                      max-size="5"
+                      direction-links="true"
+                      boundary-links="true" class="col-md-12">
+                  </dir-pagination-controls>    
+           </div>
+
+	<script type="text/javascript">
+     $('body').bind('keyup', function(e) {
+	if(e.keyCode==27){
+
+		if(!$(".story_module").is(":visible"))
+		{
+		   $(".close-button").click();
+	    }
+	}
+});
+
+     
+    </script>
+
+

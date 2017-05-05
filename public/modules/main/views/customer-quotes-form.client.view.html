@@ -1,0 +1,70 @@
+<div class="modaldialog" id="custQuotes">
+  <!-- Modal content-->
+  <div class="modal-content" style="border:none;">
+      <div class="modal-header bg-primary" style="padding:10px 10px 10px 20px;">
+          <h3 class="modal-title "><em style="font-style:normal;">Customer Appreciation</em></h3>
+      </div>
+      <div class="modal-body bg-info" style="padding:20px;">
+          <form name="quoteForm" ng-model="quoteForm" ng-submit="submitQuoteForm(quoteForm.$valid)" >
+              <div class="form-group row">
+                  <h4 class="col-sm-2">By:</h4>
+                  <div class="col-sm-8">
+                      <input type="text" name="by"class="form-control" data-ng-model="by" id="by" placeholder="Appreciated By" required>
+                  </div>
+              </div>
+              <div class="form-group row">
+                  <h4 class="col-sm-2">To:</h4>
+                  <h5 class="col-sm-3">
+                    <label class="radio-inline col-sm-4 text-info">
+                      <input type="radio" name="to" required>Individual
+                    </label>
+                  </h5>
+                  <h5 class="col-sm-3">
+                    <label class="radio-inline col-sm-2 text-info">
+                      <input type="radio" name="to" required>Team
+                    </label>
+                  </h5>
+                  <br>
+              </div>
+              <div class="form-group row">
+                  <h4 class="col-sm-2">Name:</h4>
+                  <div class="col-sm-8">
+                      <input type="text" name="name" class="form-control " data-ng-model="to" required>
+                  </div>
+              </div>
+              <div class="form-group row">
+                  <h4 class="col-sm-2">Date:</h4>
+                  <div class="col-sm-8">
+                      <input type="text" class="form-control" id="custdate" data-ng-model="date" name="formdate" placeholder="mm/dd/yyyy" required ng-click="addDate()">
+                  </div>
+              </div>
+              <div class="form-group row">
+                  <h4 class="col-sm-2">Comment:</h4>
+                  <div class="col-sm-8">
+                      <textarea class="form-control" rows="3" data-ng-model="description" id="comment" name="comment" placeholder="Comments" required></textarea>
+                  </div>
+              </div>
+              <div class="row margin-above">
+                <div class="col-sm-offset-9 col-sm-3 col-lg-offset-9 col-lg-3 col-md-offset-9 col-md-3">
+                  <button type="submit" class="btn submit-btn" ng-disabled="quoteForm.to.$invalid || quoteForm.by.$invalid || quoteForm.name.$invalid || quoteForm.comment.$invalid" ng-click="closeThisDialog()">Submit</button>
+                </div>
+              </div>
+            </form>
+      </div>
+  </div>
+</div>
+<script type="text/javascript">
+  $(function() { 
+        $('#custdate').daterangepicker({
+            showDropdowns: true,
+             singleDatePicker: true,
+                 locale: {
+                  format: 'YYYY-MM-DD'
+                },
+           
+        }); 
+
+      });
+  
+  </script>
+
